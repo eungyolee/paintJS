@@ -6,17 +6,18 @@ const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
 
 const INITIAL_COLOR = "#2c2c2c";
-const CANVAS_SIZE = 500;
+const CANVAS_WIDTH = 800;
+const CANVAS_HEIGHT = 500;
 const PIXEL_RATIO = window.devicePixelRatio || 1;
 
-canvas.width = CANVAS_SIZE * PIXEL_RATIO;
-canvas.height = CANVAS_SIZE * PIXEL_RATIO;
-canvas.style.width = `${CANVAS_SIZE}px`;
-canvas.style.height = `${CANVAS_SIZE}px`;
+canvas.width = CANVAS_WIDTH * PIXEL_RATIO;
+canvas.height = CANVAS_HEIGHT * PIXEL_RATIO;
+canvas.style.width = `${CANVAS_WIDTH}px`;
+canvas.style.height = `${CANVAS_HEIGHT}px`;
 
 ctx.scale(PIXEL_RATIO, PIXEL_RATIO);
 ctx.fillStyle = "white";
-ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT - 300);
 ctx.strokeStyle = INITIAL_COLOR;
 ctx.fillStyle = INITIAL_COLOR;
 ctx.lineWidth = 2.5;
@@ -61,7 +62,7 @@ function handleRangeChange(event) {
 
 function handleCanvasClick() {
     if (filling) {
-        ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     }
 }
 
